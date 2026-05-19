@@ -1,0 +1,20 @@
+"""
+sample.py — A simple example Python script.
+"""
+
+class Greeter:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        return f"Hello, {self.name}!"
+
+def add(a, b):
+    return a + b
+
+if __name__ == "__main__":
+    greeter = Greeter("Michael")
+    print(greeter.greet())
+
+    result = add(5, 7)
+    print(f"5 + 7 = {result}")
