@@ -9,6 +9,12 @@ function increaseCount() {
   function displayCount() {
     document.getElementById('countDisplay').innerHTML=count; // Display the count in the HTML
     }
+
+    function ResetCount() {
+            count = 0;
+            document.getElementById('countDisplay').innerHTML=count; // Display the count in the HTML
+            alert("The Followers count has been reset to zero.");
+        }        
     
     function checkCountValue() {
         if (count === 10) {
