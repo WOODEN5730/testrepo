@@ -25,32 +25,30 @@ function startTest() {
         userInput.readOnly = true;
     
         const outputDiv = document.getElementById("output");
-        const typedText = userInput.value;
+        const userTypedText = userInput.value;
         const timeElapsed = (endTime - startTime) / 1000;
     
         // Word count
-        const typedWords = typedText.trim().split(/\s+/).filter(w => w !== "").length;
+        const typedWords = userTypedText.trim().split(/\s+/).filter(w => w !== "").length;
         const wpm = timeElapsed > 0 ? Math.round((typedWords / timeElapsed) * 60) : 0;
     
         // Accuracy calculation
         let correctChars = 0;
         const target = testText;
     
-        for (let i = 0; i < typedText.length; i++) {
-            if (typedText[i] === target[i]) {
+        for (let i = 0; i < userTypedText.length; i++) {
+            if (userTypedText[i] === target[i]) {
                 correctChars++;
             }
         }
-    
-        const accuracy = Math.round((correctChars / target.length) * 100);
-    
+            
         // Display results
         outputDiv.innerHTML = `
             <h2>Typing Test Results:</h2>
+            <p>Total Length: ${correctChars}</p>
             <p>Words Typed: ${typedWords}</p>
             <p>Time Elapsed: ${timeElapsed.toFixed(2)} seconds</p>
             <p>Words Per Minute (WPM): ${wpm}</p>
-            <p>Accuracy: ${accuracy}%</p>
         `;
     }
     
